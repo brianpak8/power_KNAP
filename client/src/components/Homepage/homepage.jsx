@@ -25,7 +25,7 @@ class Homepage extends React.Component {
         <h1>Fam.ly</h1>
         {/* <Search /> */}
         {/*<RoomList rooms={this.state.roomList} /> */}
-        <Sidebar />
+        <Sidebar rooms={this.state.roomList}/>
       </div>
     );
   }
