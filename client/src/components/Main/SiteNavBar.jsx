@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 const SiteNavBar = function (props) {
   return (
     <div className="topnav" id="myTopnav">
-      <Link to="/" >Home</Link>
-      <Link to="/rooms">Room</Link>)
+      <Link to="/" className="toHomePage">Home </Link>
+      <Link to="/rooms" className="toRooms">Room</Link>)
       {/* {!props.isLoggedin && (<LoginButton triggerLogin={props.triggerLogin} />)}
       {props.isLoggedin && (<Link to="/match">Find a Match </Link>)}
       {props.isLoggedin && (<Link to="/viewMatches">View Your Matches </Link>)}

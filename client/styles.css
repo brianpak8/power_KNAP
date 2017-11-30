@@ -250,10 +250,10 @@ body {
   float: right;
 }
 
+.toHomePage {
+  float: left;
+}
 
-
-
-
-
-
-
+.toRooms {
+  float: right;
+}
