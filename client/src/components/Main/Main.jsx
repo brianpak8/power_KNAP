@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 // import SignupPage from './SignupPage';
 // import SearchPage from './SearchPage';
 // import MatchPage from './MatchPage';
-import HomePage from '../Homepage/Homepage';
+import HomePage from '../Homepage/homepage';
 import RoomView from '../Room/RoomView';
 
 // The Main component renders one of the three provided
