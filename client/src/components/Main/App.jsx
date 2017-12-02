@@ -17,10 +17,10 @@ class App extends React.Component {
     this.createRoom = this.createRoom.bind(this);
   }
 
-  selectRoom (event) {
+  selectRoom (roomId) {
     // if (this.state.selectedRoom.id === null) {
       console.log('look, a room has been selected');
-      this.setState({selectedRoom: event.target.id,
+      this.setState({selectedRoom: {id: roomId},
         // roomName: name
       })
       // this.selectRoom(this.state.selectedRoom.id, this.state.selectedRoom.roomName);
