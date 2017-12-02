@@ -11,7 +11,7 @@ import ChatView from './ChatView';
 let roomSocket;
 
 
-const superUniqueWord = 4;
+// const this.props.room = 4;
 class RoomView extends React.Component {
   constructor(props) {
     super(props);
@@ -45,9 +45,9 @@ class RoomView extends React.Component {
 
   componentDidMount() {
     if (!this.state.socketsOpen) {
-      axios.get(`/openRoomConnection/USER_ID_WILL_GO_HERE/${superUniqueWord}`)
+      axios.get(`/openRoomConnection/USER_ID_WILL_GO_HERE/${this.props.room}`)
         .then(() => {
-          roomSocket = io(`/room${superUniqueWord}`);
+          roomSocket = io(`/room${this.props.room}`);
           this.setState({ socketsOpen: true });
           this.componentDidMount();
         });
@@ -86,7 +86,7 @@ class RoomView extends React.Component {
     // when video has ended
     if (e.data === 0) {
       if (this.state.isHost) {
-        axios.patch(`/playNext/${superUniqueWord}/${this.state.playlist.length - 1}`);
+        axios.patch(`/playNext/${this.props.room}/${this.state.playlist.length - 1}`);
       }
       this.setState({
         startOptions: { playerVars: { start: 0 } },
@@ -127,7 +127,7 @@ class RoomView extends React.Component {
   }
 
   renderRoom() {
-    return axios.get(`/renderRoom/${superUniqueWord}`)
+    return axios.get(`/renderRoom/${this.props.room}`)
       .then(({ data }) => {
         const currentTime = Date.now();
         const timeLapsed = moment.duration(moment(currentTime).diff(data.start)).asSeconds();

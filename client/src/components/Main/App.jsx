@@ -17,9 +17,14 @@ class App extends React.Component {
     this.createRoom = this.createRoom.bind(this);
   }
 
-  selectRoom (id) {
-    console.log('look, a room has been selected');
-    this.setState({selectedRoom: id});
+  selectRoom (event) {
+    // if (this.state.selectedRoom.id === null) {
+      console.log('look, a room has been selected');
+      this.setState({selectedRoom: event.target.id,
+        // roomName: name
+      })
+      // this.selectRoom(this.state.selectedRoom.id, this.state.selectedRoom.roomName);
+    // }
   }
 
   createRoom(roomName) {
@@ -30,7 +35,7 @@ class App extends React.Component {
     axios.get('/allrooms')
       .then((data) => {
         //data = JSON.parse(data);
-        console.log('HEY!!!!!!!!', data);
+        //console.log('HEY!!!!!!!!', data);
         this.setState({allRooms: data.data});
       })
       .catch((err) => {console.log(err)})

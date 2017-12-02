@@ -24,7 +24,7 @@ const Main = props => (
       {/* <Route path="/signup" component={SignupPage} /> */}
       <Route
         path="/rooms"
-        render={() => (<RoomView id={props.selectedRoom}/>)}
+        render={() => (<RoomView room={props.selectedRoom}/>)}
       />
       {/* <Route path="/match" render={() => <MatchPage userId={props.userdata.userid} />} />
       <Route
