@@ -13,7 +13,7 @@ class App extends React.Component {
 
     this.state = {
       allRooms: [],//[{id:1, roomName:'first'}, {id:2, roomName:'second'}, {id:3, roomName:'third'} ,{id:4, roomName:'fourth'}],
-      selectedRoom: {id:null, roomName:null},
+      selectedRoom: {id: 1, roomName:null},
     };
     this.selectRoom = this.selectRoom.bind(this);
     this.createRoom = this.createRoom.bind(this);
@@ -38,7 +38,7 @@ class App extends React.Component {
   getAllRooms() {
     axios.get('/allrooms')
       .then((data) => {
-        console.log('HEY!!!!!!!!', data);
+        //console.log('HEY!!!!!!!!', data);
         this.setState({allRooms: data.data.reverse()});
       })
       .catch((err) => {console.log(err)})
